@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirecct
+from django.shortcuts import render, redirect
 from django.utils.crypto import get_random_string
 
 def index(request):
-    if 'counter' not in request_session:
+    if 'counter' not in request.session:
         request.session['counter'] = 0
     request.session['counter'] += 1
     request.session['new_word'] = get_random_string(length=24)

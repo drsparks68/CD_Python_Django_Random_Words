@@ -8,7 +8,8 @@
 </head>
 <body>
     <form action="/random_word" method="post">
-    <h3>Random Word (attempt # {{request.session.attempt}}</h3>
+    {% csrf_token %}
+    <h3>Random Word attempt #: {{request.session.counter}}</h3>
     <h1>{{request.session.new_word}}</h1>
     <button type="submit">Generate</button>
 </body>
